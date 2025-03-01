@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
-interface NavbarProps {}
-
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const toggleMenu = () => {
@@ -10,28 +8,28 @@ const Navbar: React.FC<NavbarProps> = () => {
 	};
 
 	return (
-		<nav className="bg-gray-800 text-white sticky top-0 z-50">
+		<nav className="bg-dark text-white sticky top-0 z-50">
 			<div className="max-w-6xl mx-auto px-4">
 				<div className="flex justify-between items-center h-16">
 					<div className="flex items-center">
-						<div className="text-xl font-bold">Michał Ryz</div>
+						<div className="text-xl font-bold text-primary">Michał Ryz</div>
 					</div>
 
 					{/* Desktop Navigation */}
 					<div className="hidden md:flex items-center space-x-4">
-						<a href="#" className="px-3 py-2 text-gray-300 hover:text-white">
+						<a href="#" className="px-3 py-2 text-gray-300 hover:text-primary">
 							Home
 						</a>
-						<a href="#" className="px-3 py-2 text-gray-300 hover:text-white">
+						<a href="#" className="px-3 py-2 text-gray-300 hover:text-primary">
 							Projects
 						</a>
-						<a href="#" className="px-3 py-2 text-gray-300 hover:text-white">
+						<a href="#" className="px-3 py-2 text-gray-300 hover:text-primary">
 							Skills
 						</a>
-						<a href="#" className="px-3 py-2 text-gray-300 hover:text-white">
+						<a href="#" className="px-3 py-2 text-gray-300 hover:text-primary">
 							Experience
 						</a>
-						<a href="#" className="px-3 py-2 text-gray-300 hover:text-white">
+						<a href="#" className="px-3 py-2 text-gray-300 hover:text-primary">
 							Contact
 						</a>
 					</div>
