@@ -4,7 +4,7 @@ function Hero() {
 	return (
 		<section
 			id="home"
-			className="min-h-screen flex items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative"
+			className="min-h-screen flex bg-fixed items-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative"
 		>
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -23,13 +23,13 @@ function Hero() {
 						<div className="flex flex-wrap gap-4">
 							<button
 								onClick={() => {}}
-								className="border-2 border-primary text-dark px-6 py-3 rounded bg-primary hover:bg-opacity-90 transition-all duration-300"
+								className="cursor-pointer border-2 border-primary text-dark px-6 py-3 rounded bg-primary hover:bg-opacity-90 transition-all duration-300"
 							>
 								View my work
 							</button>
 							<button
 								onClick={() => {}}
-								className="border-2 border-primary text-primary px-6 py-3 rounded hover:bg-primary hover:opacity-80 hover:text-dark transition-all duration-300"
+								className="cursor-pointer border-2 border-primary text-primary px-6 py-3 rounded hover:bg-primary hover:opacity-80 hover:text-dark transition-all duration-300"
 							>
 								Contact me
 							</button>
