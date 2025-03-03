@@ -1,17 +1,51 @@
+import React, { useState } from "react";
+
 function Contact() {
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		subject: "",
+		message: "",
+	});
+	const [status, setStatus] = useState("");
+
+	const handleChange = (
+		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) => {
+		setFormData({ ...formData, [e.target.id]: e.target.value });
+	};
+
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		setStatus("Sending...");
+
+		const response = await fetch("https://formspree.io/f/xwpvgark", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(formData),
+		});
+
+		if (response.ok) {
+			setStatus("Message sent successfully!");
+			setFormData({ name: "", email: "", subject: "", message: "" });
+		} else {
+			setStatus("Failed to send message. Try again later.");
+		}
+	};
+
 	return (
 		<section
 			id="contact"
 			className="py-20 bg-fixed bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900"
 		>
-			<div className="container  mx-auto px-4">
+			<div className="container mx-auto px-4">
 				<div className="max-w-3xl mx-auto text-center mb-12">
 					<h2 className="text-3xl text-white font-bold mb-2">Get In Touch</h2>
 					<div className="w-48 h-1 bg-primary mx-auto mt-2"></div>
 				</div>
 
 				<div className="max-w-2xl mx-auto bg-gray-900 p-8 rounded-lg">
-					<form className="space-y-6">
+					<form className="space-y-6" onSubmit={handleSubmit}>
 						<div className="grid md:grid-cols-2 gap-6">
 							<div>
 								<label htmlFor="name" className="block text-gray-300 mb-2 ">
@@ -22,6 +56,9 @@ function Contact() {
 									id="name"
 									className="w-full bg-gray-700 text-white px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
 									placeholder="Your name"
+									value={formData.name}
+									onChange={handleChange}
+									required
 								/>
 							</div>
 							<div>
@@ -33,6 +70,9 @@ function Contact() {
 									id="email"
 									className="w-full bg-gray-700 text-white px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
 									placeholder="your.email@example.com"
+									value={formData.email}
+									onChange={handleChange}
+									required
 								/>
 							</div>
 						</div>
@@ -46,6 +86,9 @@ function Contact() {
 								id="subject"
 								className="w-full bg-gray-700 text-white px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
 								placeholder="What is this regarding?"
+								value={formData.subject}
+								onChange={handleChange}
+								required
 							/>
 						</div>
 
@@ -57,6 +100,9 @@ function Contact() {
 								id="message"
 								className="w-full bg-gray-700 text-white px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
 								placeholder="Your message here..."
+								value={formData.message}
+								onChange={handleChange}
+								required
 							></textarea>
 						</div>
 
@@ -67,10 +113,11 @@ function Contact() {
 							Send Message
 						</button>
 					</form>
+					{status && <p className="text-white text-center mt-4">{status}</p>}
 
-					<div className="mt-8 pt-8 border-t border-gray-700 grid grid-cols-2 md:grid-cols-3 gap-4 text-center">
+					<div className="mt-8 pt-8 border-t border-gray-700 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
 						<a
-							href="https://linkedin.com/in/michalryz"
+							href="https://linkedin.com/in/michal-ryz"
 							target="_blank"
 							className="text-gray-300 hover:text-primary transition-colors flex flex-col items-center"
 						>
@@ -91,6 +138,14 @@ function Contact() {
 						>
 							<i className="fas fa-envelope fa-xl mt-2 mb-4"></i>
 							Email
+						</a>
+						<a
+							href="src\assets\resume_michal_ryz.pdf"
+							target="_blank"
+							className="text-gray-300 hover:text-primary transition-colors  flex flex-col items-center"
+						>
+							<i className="fas fa-file-lines fa-xl mt-2 mb-4"></i>
+							My resume
 						</a>
 					</div>
 				</div>

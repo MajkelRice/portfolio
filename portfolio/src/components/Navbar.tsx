@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import handleScroll from "../helper/handleScroll";
 
 const Navbar: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,32 +10,53 @@ const Navbar: React.FC = () => {
 
 	return (
 		<nav className="bg-dark text-white opacity-95 sticky top-0 z-50">
-			<div className="max-w-6xl mx-auto px-4">
+			<div className=" mx-auto px-4">
 				<div className="flex justify-between items-center h-16">
 					<div className="flex items-center">
-						<div className="text-xl font-bold text-white">
+						<div className="ml-50 text-xl font-bold text-white">
 							&lt;
-							<p className="inline-block text-primary">Michał Ryz </p> /&gt;
+							<button
+								onClick={() => handleScroll("hero")}
+								className="inline-block text-primary cursor-pointer"
+							>
+								Michał Ryz{" "}
+							</button>{" "}
+							/&gt;
 						</div>
 					</div>
 
 					{/* Desktop Navigation */}
 					<div className="hidden md:flex items-center space-x-4">
-						<a href="#" className="px-3 py-2 text-gray-300 hover:text-primary">
+						<button
+							onClick={() => handleScroll("hero")}
+							className="px-3 py-2 text-gray-300 hover:text-primary cursor-pointer"
+						>
 							Home
-						</a>
-						<a href="#" className="px-3 py-2 text-gray-300 hover:text-primary">
-							Projects
-						</a>
-						<a href="#" className="px-3 py-2 text-gray-300 hover:text-primary">
+						</button>
+						<button
+							onClick={() => handleScroll("skills")}
+							className="px-3 py-2 text-gray-300 hover:text-primary cursor-pointer"
+						>
 							Skills
-						</a>
-						<a href="#" className="px-3 py-2 text-gray-300 hover:text-primary">
-							Experience
-						</a>
-						<a href="#" className="px-3 py-2 text-gray-300 hover:text-primary">
+						</button>
+						<button
+							onClick={() => handleScroll("projects")}
+							className="px-3 py-2 text-gray-300 hover:text-primary cursor-pointer"
+						>
+							Projects
+						</button>
+						<button
+							onClick={() => handleScroll("contact")}
+							className="px-3 py-2 text-gray-300 hover:text-primary cursor-pointer"
+						>
 							Contact
-						</a>
+						</button>
+						<button
+							onClick={() => handleScroll("projects")}
+							className=" ml-20 mr-4 cursor-pointer  border-2 border-primary text-dark px-5 py-2 rounded bg-primary hover:border-primary/80 hover:bg-primary/80 transition-all duration-300"
+						>
+							View my work
+						</button>
 					</div>
 
 					{/* Mobile Menu Button */}
@@ -91,12 +113,6 @@ const Navbar: React.FC = () => {
 							className="block px-3 py-2 hover:bg-gray-600 rounded-md"
 						>
 							Skills
-						</a>
-						<a
-							href="#"
-							className="block px-3 py-2 hover:bg-gray-600 rounded-md"
-						>
-							Experience
 						</a>
 						<a
 							href="#"

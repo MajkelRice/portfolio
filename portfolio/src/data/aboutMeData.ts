@@ -1,23 +1,23 @@
 const aboutMeData = [
 	{
-		text: "Software engineer with 7+ years of experience",
+		text: "Computer Science student at AGH University of Science and Technology",
 		icon: "fas fa-code",
 	},
 	{
-		text: "MS in Computer Science, Stanford University",
-		icon: "fas fa-graduation-cap",
+		text: "Passionate about backend development and scalable systems",
+		icon: "fas fa-server",
 	},
 	{
-		text: "Worked at Google, Microsoft and startups",
-		icon: "fas fa-briefcase",
+		text: "Learning React, Flutter, and Godot 4.3",
+		icon: "fas fa-laptop-code",
 	},
 	{
-		text: "Passionate about clean code and elegant solutions",
-		icon: "fas fa-lightbulb",
+		text: "Building accessible and human-centered digital experiences",
+		icon: "fas fa-users",
 	},
 	{
-		text: "Love hiking, photography and chess",
-		icon: "fas fa-heart",
+		text: "Enjoy problem-solving, gaming, and exploring new technologies",
+		icon: "fas fa-gamepad",
 	},
 ];
 export default aboutMeData;

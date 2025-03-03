@@ -1,5 +1,4 @@
 import {} from "react";
-import Projects from "./components/Projects";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
@@ -13,10 +12,6 @@ function App() {
 				<Router>
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route
-							path="/my-projects"
-							element={<Projects featuredProjects={false} />}
-						/>
 					</Routes>
 				</Router>
 				<Footer></Footer>

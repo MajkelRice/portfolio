@@ -8,7 +8,7 @@ function Home() {
 		<div className="Home">
 			<Hero></Hero>
 			<Skills></Skills>
-			<Projects featuredProjects={true}></Projects>
+			<Projects></Projects>
 			<Contact></Contact>
 		</div>
 	);

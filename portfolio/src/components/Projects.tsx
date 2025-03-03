@@ -1,22 +1,27 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import projectsData from "../data/projectsData";
+import handleScroll from "../helper/handleScroll";
 
-interface ProjectsProps {
-	featuredProjects: boolean;
-}
+function Projects() {
+	const [onlyFeaturedProjects, setOnlyFeaturedProjects] = useState(true);
 
-function Projects({ featuredProjects }: ProjectsProps) {
+	const toggleFeaturedProjects = () => {
+		setOnlyFeaturedProjects((prev) => !prev);
+	};
+
+	useEffect(() => {}, [onlyFeaturedProjects]);
+
 	return (
 		<section id="projects" className="py-20">
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 				<h2 className="text-white text-3xl font-bold mb-12 text-center">
-					Featured Projects
+					{onlyFeaturedProjects ? "Featured Projects" : "All of my Projects"}
 					<div className="w-64 h-1 bg-primary mx-auto mt-2"></div>
 				</h2>
 
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{projectsData
-						.filter((project) => !featuredProjects || project.featured)
+						.filter((project) => !onlyFeaturedProjects || project.featured)
 						.map((project, index) => (
 							<div
 								key={index}
@@ -50,20 +55,17 @@ function Projects({ featuredProjects }: ProjectsProps) {
 										))}
 									</div>
 									<div className="flex space-x-4">
-										{/* <button
-											onClick={() => window.open(project.github, "_blank")}
-											className="border-2 border-primary text-dark px-6 py-3 rounded bg-primary hover:bg-opacity-90 transition-all duration-300"
-										>
-											View on github <i className="fab fa-github text-xl"></i>
-										</button> */}
 										<a
 											href={project.github}
+											target="_blank"
 											className="text-light hover:text-primary transition-colors"
+											hidden={project.github == ""}
 										>
 											<i className="fab fa-github text-xl"></i>
 										</a>
 										<a
 											href={project.live}
+											target="_blank"
 											className="text-light hover:text-primary transition-colors"
 											hidden={project.live == ""}
 										>
@@ -76,13 +78,18 @@ function Projects({ featuredProjects }: ProjectsProps) {
 				</div>
 
 				<div className="text-center mt-12">
-					<Link
-						to="/my-projects"
-						className="text-primary hover:underline inline-flex items-center"
+					<button
+						onClick={() => {
+							toggleFeaturedProjects();
+							if (!onlyFeaturedProjects) handleScroll("projects");
+						}}
+						className="text-primary hover:underline inline-flex items-center cursor-pointer"
 					>
-						View More Projects
+						{onlyFeaturedProjects
+							? "Show All Projects"
+							: "Show Featured Projects"}
 						<i className="fas fa-arrow-right ml-2"></i>
-					</Link>
+					</button>
 				</div>
 			</div>
 		</section>
