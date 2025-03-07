@@ -1,3 +1,7 @@
+import dance_project from "../assets/dance_project.png";
+import darwin_world from "../assets/darwin_world.png";
+import yummier_project from "../assets/yummier_project.png";
+
 const projectsData = [
 	{
 		title: "Cooking website with recipes",
@@ -6,7 +10,7 @@ const projectsData = [
 		tech: ["React", "TypeScript", "SpringBoot", "PostgreSQL", "Docker"],
 		github: "https://github.com/treska03/Yummier",
 		live: "",
-		image: "src/assets/yummier_project.png",
+		image: yummier_project,
 		featured: true,
 	},
 	{
@@ -16,7 +20,7 @@ const projectsData = [
 		tech: ["Html", "Css", "JavaScript"],
 		github: "",
 		live: "https://majkelrice.github.io/WDAI/",
-		image: "src/assets/dance_project.png",
+		image: dance_project,
 		featured: true,
 	},
 	{
@@ -26,7 +30,7 @@ const projectsData = [
 		tech: ["Java", "JavaFX", "Gradle", "Git"],
 		github: "https://github.com/kanitsch/darwin_world",
 		live: "",
-		image: "src/assets/darwin_world.png",
+		image: darwin_world,
 		featured: true,
 	},
 ];

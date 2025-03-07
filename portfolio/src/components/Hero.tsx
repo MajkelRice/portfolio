@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import handleScroll from "../helper/handleScroll";
+import my_photo from "../assets/my_photo.png";
 
 function Hero() {
 	return (
@@ -48,7 +49,7 @@ function Hero() {
 
 						<div className="relative z-10 overflow-hidden border-4 border-white shadow-xl rounded-full max-w-[24rem] w-full aspect-square">
 							<img
-								src="src/assets/my_photo.png"
+								src={my_photo}
 								alt="my profile picture"
 								className="w-full h-full object-cover"
 							/>
