@@ -1,3 +1,4 @@
+import resume_michal_ryz from "../assets/resume_michal_ryz.pdf";
 import React, { useState } from "react";
 import handleScroll from "../helper/handleScroll";
 
@@ -54,7 +55,7 @@ const Navbar: React.FC = () => {
 						</button>
 						<div className="ml-auto">
 							<a
-								href="src/assets/resume_michal_ryz.pdf"
+								href={resume_michal_ryz}
 								target="_blank"
 								className="border-2 border-primary text-dark px-5 py-2 rounded bg-primary hover:border-primary/80 hover:bg-primary/80 transition-all duration-300"
 							>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import resume_michal_ryz from "../assets/resume_michal_ryz.pdf";
 
 function Contact() {
 	const [formData, setFormData] = useState({
@@ -140,7 +141,7 @@ function Contact() {
 							Email
 						</a>
 						<a
-							href="src\assets\resume_michal_ryz.pdf"
+							href={resume_michal_ryz}
 							target="_blank"
 							className="text-gray-300 hover:text-primary transition-colors  flex flex-col items-center"
 						>

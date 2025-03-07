@@ -1,4 +1,5 @@
 import React from "react";
+import resume_michal_ryz from "../assets/resume_michal_ryz.pdf";
 import handleScroll from "../helper/handleScroll";
 
 interface FooterProps {}
@@ -85,7 +86,7 @@ const Footer: React.FC<FooterProps> = () => {
 									</a>
 								</li>
 								<li className="text-gray-300 hover:text-primary flex items-center gap-2">
-									<a target="_blank" href="src/assets/resume_michal_ryz.pdf">
+									<a target="_blank" href={resume_michal_ryz}>
 										<i className="fas fa-file-lines fa-lg pr-2"></i> My resume
 									</a>
 								</li>
