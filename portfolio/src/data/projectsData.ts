@@ -6,7 +6,7 @@ const projectsData = [
 		tech: ["React", "TypeScript", "SpringBoot", "PostgreSQL", "Docker"],
 		github: "https://github.com/treska03/Yummier",
 		live: "",
-		image: "src/assets/tmp.jpg",
+		image: "src/assets/yummier_project.png",
 		featured: true,
 	},
 	{
@@ -16,17 +16,17 @@ const projectsData = [
 		tech: ["Html", "Css", "JavaScript"],
 		github: "",
 		live: "https://majkelrice.github.io/WDAI/",
-		image: "src/assets/dance_photo.jpg",
+		image: "src/assets/dance_project.png",
 		featured: true,
 	},
 	{
 		title: "Darwin life simulation",
 		description:
 			"Simulation of life of animals living, moving, eating and reproducing in a 2D world.",
-		tech: ["Java", "JavaFX"],
+		tech: ["Java", "JavaFX", "Gradle", "Git"],
 		github: "https://github.com/kanitsch/darwin_world",
 		live: "",
-		image: "src/assets/ja.jpg",
+		image: "src/assets/darwin_world.png",
 		featured: true,
 	},
 ];

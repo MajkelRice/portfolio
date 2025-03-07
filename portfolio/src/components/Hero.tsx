@@ -48,7 +48,7 @@ function Hero() {
 
 						<div className="relative z-10 overflow-hidden border-4 border-white shadow-xl rounded-full max-w-[24rem] w-full aspect-square">
 							<img
-								src="src/assets/ja.jpg"
+								src="src/assets/my_photo.png"
 								alt="my profile picture"
 								className="w-full h-full object-cover"
 							/>

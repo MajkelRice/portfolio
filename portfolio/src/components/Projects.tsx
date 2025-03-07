@@ -4,6 +4,9 @@ import handleScroll from "../helper/handleScroll";
 
 function Projects() {
 	const [onlyFeaturedProjects, setOnlyFeaturedProjects] = useState(true);
+	const hasNonFeaturedProjects = projectsData.some(
+		(project) => !project.featured
+	);
 
 	const toggleFeaturedProjects = () => {
 		setOnlyFeaturedProjects((prev) => !prev);
@@ -15,7 +18,7 @@ function Projects() {
 		<section id="projects" className="py-20">
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 				<h2 className="text-white text-3xl font-bold mb-12 text-center">
-					{onlyFeaturedProjects ? "Featured Projects" : "All of my Projects"}
+					{onlyFeaturedProjects ? "Featured Projects" : "More of my Projects"}
 					<div className="w-64 h-1 bg-primary mx-auto mt-2"></div>
 				</h2>
 
@@ -78,18 +81,20 @@ function Projects() {
 				</div>
 
 				<div className="text-center mt-12">
-					<button
-						onClick={() => {
-							toggleFeaturedProjects();
-							if (!onlyFeaturedProjects) handleScroll("projects");
-						}}
-						className="text-primary hover:underline inline-flex items-center cursor-pointer"
-					>
-						{onlyFeaturedProjects
-							? "Show All Projects"
-							: "Show Featured Projects"}
-						<i className="fas fa-arrow-right ml-2"></i>
-					</button>
+					{hasNonFeaturedProjects && (
+						<button
+							onClick={() => {
+								toggleFeaturedProjects();
+								if (!onlyFeaturedProjects) handleScroll("projects");
+							}}
+							className="text-primary hover:underline inline-flex items-center cursor-pointer"
+						>
+							{onlyFeaturedProjects
+								? "Show More Projects"
+								: "Show Featured Projects"}
+							<i className="fas fa-arrow-right ml-2"></i>
+						</button>
+					)}
 				</div>
 			</div>
 		</section>

@@ -8,7 +8,7 @@ const aboutMeData = [
 		icon: "fas fa-server",
 	},
 	{
-		text: "Learning React, Flutter, and Godot 4.3",
+		text: "Learning React, Rust, and Godot",
 		icon: "fas fa-laptop-code",
 	},
 	{
